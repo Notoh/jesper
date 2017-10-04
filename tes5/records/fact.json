@@ -17,7 +17,7 @@
         "members": [
           {
             "name": "Form ID - Faction",
-            "type": "uint32"
+            "type": "CheckedFormID",
           },
           {
             "name": "Mod",
@@ -35,11 +35,362 @@
           }
         ]
       }
-    }
+    },
     {
       "def": {
         "signature": "DATA",
-        "name": "Faction Data"
+        "name": "Faction Flags",
+        "type": "uint32",
+        "factionFlags": {
+          "0x1": "Hidden from PC",
+          "0x2": "Special Combat",
+          "0x40": "Track Crime",
+          "0x80": "Ignore Murder",
+          "0x100": "Ignore Assault",
+          "0x200": "Ignore Stealing",
+          "0x400": "Ignore Trespass",
+          "0x800": "Do not report crimes against members",
+          "0x1000": "Crime Gold - Use Defaults",
+          "0x2000": "Ignore Pickpocket",
+          "0x4000": "Vendor",
+          "0x8000": "Can Be Owner",
+          "0x10000": "Ignore Werewolf"
+        }
+      },
+      "required": true
+    },
+    {
+      "def": {
+        "signature": "JAIL",
+        "name": "Prison Marker",
+        "type": "CheckedFormID",
+        "validRefs": ["REFR"]
+      }
+    },
+    {
+      "def": {
+        "signature": "WAIT",
+        "name": "Follower Wait Marker",
+        "type": "CheckedFormID",
+        "validRefs": ["REFR"]
+      }
+    },
+    {
+      "def": {
+        "signature": "STOL",
+        "name": "Evidence Chest",
+        "type": "CheckedFormID",
+        "validRefs": ["REFR"]
+      }
+    },
+    {
+      "def": {
+        "signature": "PLCN",
+        "name": "Player Belongings Chest",
+        "type": "CheckedFormID",
+        "validRefs": ["REFR"]
+      }
+    },
+    {
+      "def": {
+        "signature": "CRGR",
+        "name": "Crime Group",
+        "type": "CheckedFormID",
+        "validRefs": ["FLST"]
+      }
+    },
+    {
+      "def": {
+        "signature": "JOUT",
+        "name": "Jail Outfit",
+        "type": "CheckedFormID",
+        "validRefs": ["OTFT"]
+      }
+    },
+    {
+      "def": {
+        "signature": "CRVA",
+        "name": "Crime Gold",
+        "type": "struct",
+        "members": [
+          {
+            "name": "Arrest Flag",
+            "type": "uint8",
+            "arrestFlags": {
+              "1": "Arrest"
+            }
+          },
+          {
+            "name": "Attack Flag",
+            "type": "uint8",
+            "attackFlags": {
+              "1": "Attack on Sight"
+            }
+          },
+          {
+            "name": "Murder",
+            "type": "uint16"
+          },
+          {
+            "name": "Assault",
+            "type": "uint16"
+          },
+          {
+            "name": "Trespass",
+            "type": "uint16"
+          },
+          {
+            "name": "Pickpocket",
+            "type": "uint16"
+          },
+          {
+            "name": "Unused",
+            "type": "uint16"
+          },
+          {
+            "name": "Steal Mult",
+            "type": "float"
+          },
+          {
+            "name": "Escape",
+            "type": "uint16"
+          },
+          {
+            "name": "Werewolf",
+            "type": "uint16"
+          }
+        ]
+      }
+    },
+    {
+      "def": {
+        "name": "Ranks",
+        "type": "array",
+        "memberDef": {
+          "name": "Rank",
+          "type": "array",
+          "members": [
+            {
+              "def": "RNAM",
+              "name": "Rank ID",
+              "type": "uint32",
+              "required": true
+            },
+            {
+              "def": "MNAM",
+              "name": "Male Rank Title",
+              "type": "uint32"
+            },
+            {
+              "def": "FNAM",
+              "name": "Female Rank Title",
+              "type": "uint32"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "def": {
+        "signature": "VEND",
+        "name": "Vendor List",
+        "type": "CheckedFormID",
+        "validRefs": ["FLST"]
+      }
+    },
+    {
+      "def": {
+        "signature": "VENC",
+        "name": "Vendor Chest",
+        "type": "CheckedFormID",
+        "validRefs": ["REFR"]
+      }
+    },
+    {
+      "def": {
+        "signature": "VENV",
+        "name": "Vender Info",
+        "type": "struct",
+        "members": [
+          {
+            "name": "Start Hour",
+            "type": "uint16"
+          },
+          {
+            "name": "End Hour",
+            "type": "uint16"
+          },
+          {
+            "name": "Radius",
+            "type": "uint32"
+          },
+          {
+            "name": "Buy Stolen Items",
+            "type": "uint8",
+            "buyStolenFlags": {
+              "1": "Buys Stolen Items"
+            }
+          },
+          {
+            "name": "Sell/Buy Items",
+            "type": "uint8",
+            "sellBuyFlags": {
+              "1": "Not Sell/Buy"
+            }
+          },
+          {
+            "name": "Unused",
+            "type": "uint16"
+          }
+        ]
+      }
+    },
+    {
+      "def": {
+        "signature": "PLVD",
+        "name": "Selling Location",
+        "type": "struct",
+        "members": [
+          {
+            "name": "Specification Type",
+            "type": "uint32",
+            "specTypeFlags": {
+              "0": "Near Reference (REFR)",
+              "1": "In Cell (CELL)",
+              "2": "Near Package Start Location",
+              "3": "Near Editor Location",
+              "6": "Linked Reference (KYWD)",
+              "12": "Near Self"
+            }
+          },
+          {
+            "name": "Form ID",
+            "type": "CheckedFormID",
+            "validRefs": ["REFR", "CELL", "KYWD"]
+          },
+          {
+            "name": "Unused",
+            "type": "uint32"
+          }
+        ]
+      }
+    },
+    {
+      "def": {
+        "name": "Seller Conditions",
+        "type": "array",
+        "memberDef": {
+          "name": "Conditions",
+          "type": "struct",
+          "members": [
+            {
+              "def": "citc",
+              "required": true
+            },
+            {
+              "def": {
+                "signature": "CTDA",
+                "name": "Conditional Field",
+                "type": "struct",
+                "members": [
+                  {
+                    "name": "Operator",
+                    "type": "uint8",
+                    "required": true
+                  },
+                  {
+                    "name": "Unknown",
+                    "type": "bytes",
+                    "length": 3,
+                    "required": true
+                  },
+                  {
+                    "name": "Comparison Form",
+                    "type": "CheckedFormID",
+                    "validRefs": ["GLOB"]
+                  },
+                  {
+                    "name": "Comparison Vlaue",
+                    "type": "float"
+                  },
+                  {
+                    "name": "Function Index",
+                    "type": "uint16",
+                    "required": true
+                  },
+                  {
+                    "name": "Padding",
+                    "type": "bytes",
+                    "length": 2,
+                    "required": true
+                  },
+                  {
+                    "name": "Param1 Form",
+                    "type": "CheckedFormID"
+                  },
+                  {
+                    "name": "Param1 Int",
+                    "type": "int32"
+                  },
+                  {
+                    "name": "Param1 String",
+                    "type": "string"
+                  },
+                  {
+                    "name": "Param2 Form",
+                    "type": "CheckedFormID"
+                  },
+                  {
+                    "name": "Param2 Int",
+                    "type": "int32"
+                  },
+                  {
+                    "name": "Param2 String",
+                    "type": "string"
+                  },
+                  {
+                    "name": "Event Function",
+                    "type": "int16"
+                  },
+                  {
+                    "name": "Event Member",
+                    "type": "bytes",
+                    "length": 2
+                  },
+                  {
+                    "name": "Param3 Form",
+                    "type": "CheckedFormID"
+                  },
+                  {
+                    "name": "Run On Type",
+                    "type": "uint32",
+                    "conditonFlags": {
+                      "0": "Subject",
+                      "1": "Target",
+                      "2": "Reference",
+                      "3": "Combat Target",
+                      "4": "Linked Reference",
+                      "5": "Quest Alias",
+                      "6": "Package Data",
+                      "7": "Event Data"
+                    }
+                  },
+                  {
+                    "name": "Unknown",
+                    "type": "int32"
+                  }
+                ]
+              }
+            }
+            {
+              "def": {
+                "signature": "CIS2",
+                "name": "String Name",
+                "type": "uint32"
+              }
+            }
+          ]
+        }
       }
     }
   ]

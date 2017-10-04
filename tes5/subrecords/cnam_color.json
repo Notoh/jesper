@@ -1,5 +1,6 @@
 {
   "signature": "CNAM",
   "name": "RGB",
-  "type": "bytes"
+  "type": "bytes",
+  "length": 4
 }

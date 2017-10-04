@@ -8,7 +8,7 @@
     },
     {
       "def": "cnam_color",
-      "require": true
+      "required": true
     }
   ]
 }

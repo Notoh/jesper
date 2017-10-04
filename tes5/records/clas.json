@@ -49,29 +49,29 @@
           {
             "name": "Training Weights",
             "type": "array",
-            "items": {
+            "memberDef": {
+              "name": "Weight",
               "type": "uint8"
             },
-            "minItems": 18,
-            "maxItems": 18
+            "length": 18
           },
           {
             "name": "Bleedout Default",
             "type": "array",
-            "items": {
+            "memberDef": {
+              "name": "Value",
               "type": "float"
             },
-            "minItems": 4,
-            "maxItems": 4
+            "length": 4
           },
           {
             "name": "Voice Points",
             "type": "array",
-            "items": {
+            "memberDef": {
+              "name": "Voice Point",
               "type": "uint32"
             },
-            "minItems": 4,
-            "maxItems": 4
+            "length": 4
           },
           {
             "name": "Health Weight",

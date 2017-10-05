@@ -288,106 +288,11 @@
               "required": true
             },
             {
-              "def": {
-                "signature": "CTDA",
-                "name": "Conditional Field",
-                "type": "struct",
-                "members": [
-                  {
-                    "name": "Operator",
-                    "type": "uint8",
-                    "required": true
-                  },
-                  {
-                    "name": "Unknown",
-                    "type": "bytes",
-                    "length": 3,
-                    "required": true
-                  },
-                  {
-                    "name": "Comparison Form",
-                    "type": "CheckedFormID",
-                    "validRefs": ["GLOB"]
-                  },
-                  {
-                    "name": "Comparison Vlaue",
-                    "type": "float"
-                  },
-                  {
-                    "name": "Function Index",
-                    "type": "uint16",
-                    "required": true
-                  },
-                  {
-                    "name": "Padding",
-                    "type": "bytes",
-                    "length": 2,
-                    "required": true
-                  },
-                  {
-                    "name": "Param1 Form",
-                    "type": "CheckedFormID"
-                  },
-                  {
-                    "name": "Param1 Int",
-                    "type": "int32"
-                  },
-                  {
-                    "name": "Param1 String",
-                    "type": "string"
-                  },
-                  {
-                    "name": "Param2 Form",
-                    "type": "CheckedFormID"
-                  },
-                  {
-                    "name": "Param2 Int",
-                    "type": "int32"
-                  },
-                  {
-                    "name": "Param2 String",
-                    "type": "string"
-                  },
-                  {
-                    "name": "Event Function",
-                    "type": "int16"
-                  },
-                  {
-                    "name": "Event Member",
-                    "type": "bytes",
-                    "length": 2
-                  },
-                  {
-                    "name": "Param3 Form",
-                    "type": "CheckedFormID"
-                  },
-                  {
-                    "name": "Run On Type",
-                    "type": "uint32",
-                    "conditonFlags": {
-                      "0": "Subject",
-                      "1": "Target",
-                      "2": "Reference",
-                      "3": "Combat Target",
-                      "4": "Linked Reference",
-                      "5": "Quest Alias",
-                      "6": "Package Data",
-                      "7": "Event Data"
-                    }
-                  },
-                  {
-                    "name": "Unknown",
-                    "type": "int32"
-                  }
-                ]
-              }
-            }
+              "def": "ctda",
+              "required": true
+            },
             {
-              "def": {
-                "signature": "CIS2",
-                "name": "String Name",
-                "type": "uint32"
-              }
+              "def": "cis2"
             }
           ]
         }

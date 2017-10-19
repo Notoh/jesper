@@ -1,0 +1,25 @@
+{
+  "signature": "XNAM",
+  "name": "Faction Relation",
+  "type": "struct",
+  "members": [
+	{
+      "name": "Form ID - Faction",
+	  "type": "CheckedFormID"
+    },
+	{
+	  "name": "Mod",
+	  "type": "int32"
+	},
+	{
+	  "name": "Combat",
+	  "type": "int32",
+	  "combatFlags": {
+	    "0": "Neutral",
+		"1": "Enemy",
+		"2": "Ally",
+		"3": "Friend"
+	  }
+	}
+  ]
+}

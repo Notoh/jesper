@@ -1,0 +1,23 @@
+{
+  "signature": "HDPT",
+  "name": "Head Part",
+  "subrecords": [
+    {
+      "def": "edid",
+      "name": "Editor ID"
+    },
+    {
+      "def": "full",
+      "name": "Name"
+    },
+    {
+      "def": {
+        "signature": "MODL",
+        "name": "model",
+        "type": "string"
+      }
+    },
+    
+  ]
+
+}

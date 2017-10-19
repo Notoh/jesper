@@ -47,7 +47,7 @@
             "type": "uint8"
           },
           {
-            "name": "Training Weights",
+            "name": "Skill Weights",
             "type": "array",
             "memberDef": {
               "name": "Weight",
@@ -57,21 +57,11 @@
           },
           {
             "name": "Bleedout Default",
-            "type": "array",
-            "memberDef": {
-              "name": "Value",
-              "type": "float"
-            },
-            "length": 4
+            "type": "float"
           },
           {
             "name": "Voice Points",
-            "type": "array",
-            "memberDef": {
-              "name": "Voice Point",
-              "type": "uint32"
-            },
-            "length": 4
+            "type": "uint32"
           },
           {
             "name": "Health Weight",

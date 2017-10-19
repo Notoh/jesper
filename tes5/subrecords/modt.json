@@ -1,0 +1,65 @@
+{
+  "signature": "MODT",
+  "name": "Model Texture Data",
+  "type": "struct",
+  "members": [
+    {
+      "name": "Header (Version >= 40)",
+      "type": "struct",
+      "members": [
+        {
+          "name": "Count",
+          "type": "uint32"
+        },
+        {
+          "name": "Unknown00",
+          "type": "uint32"
+        },
+        {
+          "name": "Unknown01",
+          "type": "uint32"
+        },
+        {
+          "name": "Unknown02",
+          "type": "uint32"
+        },
+        {
+          "name": "Unknown03",
+          "type": "struct",
+          "members": [
+            {
+              "name": "Unknown",
+              "type": "uint32"
+            },
+            {
+              "name": "Texture Type",
+              "type": "bytes",
+              "length": 4
+            },
+            {
+              "name": "Unknown",
+              "type": "uint32"
+            }
+          ]
+        },
+        {
+          "name": "Unknown04",
+          "type": "uint32"
+        }
+      ]
+    },
+    {
+      "name": "Header (Version >= 30)",
+      "type": "struct",
+      "members": [
+        {
+          "name": "Unknown00",
+          "type": "struct",
+          "members": [
+            
+          ]
+        }
+      ]
+    }
+  ]
+}

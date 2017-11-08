@@ -1,0 +1,21 @@
+{
+  "signature": "ACHR",
+  "name": "Actor Reference",
+  "recordFlags": {
+    "0x200": "Starts Dead",
+    "0x400": "Persistent Reference",
+    "0x800": "Initially Disabled",
+    "0x2000000": "No AI Acquire",
+    "0x10000000": "Reflected By Auto Water",
+    "0x20000000": "Don't Havok Settle"
+  },
+  "subrecords": [
+    {
+      "def": "edid",
+      "required": false
+    },
+    {
+      "def": "vmad" //TODO
+    }
+  ]
+}

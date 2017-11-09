@@ -119,15 +119,15 @@
         "members": [
           {
             "type": "float",
-            "name": "float0"
+            "name": "unknown"
           },
           {
             "type": "float",
-            "name": "float1"
+            "name": "unknown"
           },
           {
             "type": "float",
-            "name": "float2"
+            "name": "unknown"
           }
         ]
       },

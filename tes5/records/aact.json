@@ -3,11 +3,18 @@
   "name": "action",
   "subrecords": [
     {
-      "def": "edid",
-      "required": true
+      "def": {
+        "signature": "EDID",
+        "name": "Action Name",
+        "type": "string"
+      }
     },
     {
-      "def": "cnam_color"
+      "def": {
+        "signature": "CNAM",
+        "name": "RGB Color",
+        "type": "rgb"
+      }
     }
   ]
 }

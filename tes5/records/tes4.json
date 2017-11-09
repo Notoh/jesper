@@ -78,7 +78,8 @@
           ],
           "ignoreSignatures": ["ONAM"]
         }
-      }
+      },
+      "required": false
     },
     {
       "def": {
@@ -90,7 +91,8 @@
           "type": "CheckedFormID",
           "validRefs": ["ACHR", "LAND", "NAVM", "REFR", "PGRE", "PHZD", "PMIS", "PARW", "PBAR", "PBEA", "PCON", "PFLA"]
         }
-      }
+      },
+      "required": false
     },
     {
       "def": {

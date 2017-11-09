@@ -11,11 +11,295 @@
   },
   "subrecords": [
     {
-      "def": "edid",
+      "def": {
+        "signature": "EDID",
+        "name": "Editor ID",
+        "type": "string"
+      },
       "required": false
     },
     {
-      "def": "vmad" //TODO
+      "def": {
+        "signature": "VMAD",
+        "name": "Scripting",
+        "type": "vmad"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "NAME",
+        "name": "Base NPC",
+        "type": "formid"
+      },
+      "required": true
+    },
+    {
+      "def": {
+        "signature": "XEZN",
+        "name": "encounterzone",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XPRD",
+        "name": "Patrol Idle",
+        "type": "float"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XPPA",
+        "name": "unknown",
+        "type": "null"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "INAM",
+        "name": "unknown",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "PDTO",
+        "name": "Topic Data",
+        "type": "struct",
+        "members": [
+          {
+            "name": "Type",
+            "type": "uint32",
+            "typeFlags": {
+              "0": "Topic Ref",
+              "0x1": "Topic Subtype"
+            }
+          },
+          {
+            "name": "Data/Subtype",
+            "typeIfFlag0": "formid",
+            "typeIfElse": "string"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XRGD",
+        "name": "unknown",
+        "type": "struct",
+        "members": [
+          {
+            "name": "floats",
+            "type": "array",
+            "memberDef": {
+              "name": "coord",
+              "type": "float"
+            }
+          },
+          {
+            "name": "uint",
+            "type": "uint32"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XRGB",
+        "name": "unknown",
+        "type": "struct",
+        "members": [
+          {
+            "type": "float",
+            "name": "float0"
+          },
+          {
+            "type": "float",
+            "name": "float1"
+          },
+          {
+            "type": "float",
+            "name": "float2"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XLCM",
+        "name": "Leveled Creature Data",
+        "type": "uint32"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XAPD",
+        "name": "Activation Parent Flags",
+        "type": "uint8"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XAPR",
+        "name": "Activate Parent",
+        "type": "struct",
+        "members": [
+          {
+            "signature": "REFR",
+            "type": "formid",
+            "name": "Reference"
+          },
+          {
+            "name": "Delay",
+            "type": "float"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XLRT",
+        "name": "Location Reference Type",
+        "type": "array",
+        "memberDef": {
+          "signature": "LCRT",
+          "name": "type",
+          "type": "formid"
+        }
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XHOR",
+        "name": "horseid",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XESP",
+        "name": "enable parent",
+        "type": "struct",
+        "members": [
+          {
+            "name": "Parent reference",
+            "type": "formid"
+          },
+          {
+            "name": "Flags",
+            "type": "uint32"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XOWN",
+        "name": "owner",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XLCN",
+        "name": "location",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XLKR",
+        "name": "location route",
+        "type": "struct",
+        "members": [
+          {
+            "signature": "KYWD",
+            "name": "unknown",
+            "type": "formid"
+          },
+          {
+            "signature": "REFR",
+            "name": "unknown",
+            "type": "formid"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XIS2",
+        "name": "Ignored By Sandbox",
+        "type": "null"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XLRL",
+        "name": "location",
+        "type": "formid"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "XSCL",
+        "name": "scale",
+        "type": "float"
+      },
+      "required": false
+    },
+    {
+      "def": {
+        "signature": "DATA",
+        "name": "coords",
+        "type": "struct",
+        "members": [
+          {
+            "name": "X",
+            "type": "float"
+          },
+          {
+            "name": "Y",
+            "type": "float"
+          },
+          {
+            "name": "Z",
+            "type": "float"
+          },
+          {
+            "name": "rX",
+            "type": "float"
+          },
+          {
+            "name": "rY",
+            "type": "float"
+          },
+          {
+            "name": "rZ",
+            "type": "float"
+          }
+        ]
+      },
+      "required": true
     }
   ]
 }

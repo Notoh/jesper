@@ -7,14 +7,16 @@
         "signature": "EDID",
         "name": "Action Name",
         "type": "string"
-      }
+      },
+      "required": true
     },
     {
       "def": {
         "signature": "CNAM",
         "name": "RGB Color",
         "type": "rgb"
-      }
+      },
+      "required": true
     }
   ]
 }
